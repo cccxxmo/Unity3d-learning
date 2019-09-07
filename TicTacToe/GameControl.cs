@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour 
 {
-	int turn;
-	int count;
-	int[,] matrix = new int[3, 3];
+    int turn;
+    int count;
+    int[,] matrix = new int[3, 3];
 
-	// Use this for initialization
-	void Start () 
-	{
-        Init();
-	}
+    // Use this for initialization
+    void Start () 
+    {
+    	Init();
+    }
 
-	//初始化界面
-	void Init()
-	{
-		turn = 1;
+   //初始化界面
+    void Init()
+    {
+	turn = 1;
         for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 3; ++j)
@@ -26,11 +26,10 @@ public class GameControl : MonoBehaviour
             }
         }
         count = 0;	
-	}
+    }
 
-	//验证是否结束游戏
+    //验证是否结束游戏
     int Check()
-
     {
         for(int i = 0; i < 3; ++i)
         {
@@ -57,9 +56,8 @@ public class GameControl : MonoBehaviour
         return 0;
     }
 
-	//构建UI
-    private void OnGUI()
-
+    //构建UI
+    void OnGUI()
     {	
         if(GUI.Button(new Rect(420, 300, 100, 50),"Restart"))
         {
@@ -111,8 +109,9 @@ public class GameControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
-	}
+    void Update () 
+    {
+    }
 
 }
 
