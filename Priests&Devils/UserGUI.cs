@@ -24,7 +24,7 @@ public class UserGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnGUI () {
-        GUI.Label(new Rect(Screen.width / 2 - 100, 10, 200, 50), "Priests & Demons", headerStyle);
+        GUI.Label(new Rect(Screen.width / 2 - 100, 10, 200, 50), "Priests & Devils", headerStyle);
         if (status == 1)
         {
             GUI.Label(new Rect(Screen.width / 2 - 45, Screen.height / 2 - 90, 100, 50), "You Lost!", headerStyle);
