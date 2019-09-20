@@ -7,7 +7,7 @@ public class ICharacterController
 
     readonly GameObject character;
     readonly Move moveAction;
-    readonly int type; // Priest(0)/Demon(1)
+    readonly int type; // Priest(0)/Devil(1)
     readonly ClickGUI clickGUI;
 
     bool onBoat;
@@ -23,7 +23,7 @@ public class ICharacterController
         }
         else
         {
-            this.character = Object.Instantiate(Resources.Load("Prefabs/Demon", typeof(GameObject)), Vector3.zero, Quaternion.identity, null) as GameObject;
+            this.character = Object.Instantiate(Resources.Load("Prefabs/Devil", typeof(GameObject)), Vector3.zero, Quaternion.identity, null) as GameObject;
             this.type = 1;
         }
         character.name = name;
