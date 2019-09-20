@@ -40,11 +40,11 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 
         for (int i = 0; i < 3; ++i)
         {
-            ICharacterController demon = new ICharacterController(1, "demon" + i);
+            ICharacterController devil = new ICharacterController(1, "devil" + i);
             demon.setPosition(rightLand.getEmptyPosition());
             demon.getOnLand(rightLand);
-            rightLand.getOnLand(demon);
-            characters[i+3] = demon;
+            rightLand.getOnLand(devil);
+            characters[i+3] = devil;
         }
     }
 
@@ -98,35 +98,35 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
     {
         int leftPriests = 0;
         int rightPriests = 0;
-        int leftDemons = 0;
-        int rightDemons = 0;
+        int leftDevils = 0;
+        int rightDevils = 0;
 
         int[] leftStatus = leftLand.getStatus();
         leftPriests += leftStatus[0];
-        leftDemons += leftStatus[1];
+        leftDevils += leftStatus[1];
 
-        if (leftPriests + leftDemons == 6)
+        if (leftPriests + leftDevils == 6)
             return 2;
 
         int[] rightStatus = rightLand.getStatus();
         rightPriests += rightStatus[0];
-        rightDemons += rightStatus[1];
+        rightDevils += rightStatus[1];
 
         int[] boatStatus = boat.getBoatStatus();
         if (boat.getBoatPos() == 0)
         {
             leftPriests += boatStatus[0];
-            leftDemons += boatStatus[1];
+            leftDevils += boatStatus[1];
         }
         else
         {
             rightPriests += boatStatus[0];
-            rightDemons += boatStatus[1];
+            rightDevils += boatStatus[1];
         }
 
-        if (leftPriests > 0 && leftPriests < leftDemons)
+        if (leftPriests > 0 && leftPriests < leftDevils)
             return 1;
-        if (rightPriests > 0 && rightPriests < rightDemons)
+        if (rightPriests > 0 && rightPriests < rightDevils)
             return 1;
 
         return 0;
