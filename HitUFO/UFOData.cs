@@ -32,10 +32,5 @@ public class MyDiskEditor: Editor
         EditorGUILayout.PropertyField(speed);
         serializedObject.ApplyModifiedProperties();
     }
-    private void ProgressBar(float value, string label)
-    {
-        Rect rect = GUILayoutUtility.GetRect(18, 18, "TextField");
-        EditorGUI.ProgressBar(rect, value, label);
-        EditorGUILayout.Space();
-    }
+
 }
