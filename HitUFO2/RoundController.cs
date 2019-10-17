@@ -12,6 +12,7 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
 
 	public UFOFactory ufoFactory;
 	public RoundActionManager actionManager;
+	public PhysisManager physisManager;
 	public ScoreRecorder scoreRecorder;
 	private List<GameObject> ufos;
 	private int round;
@@ -53,6 +54,7 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
 		ufoFactory = Singleton<UFOFactory>.Instance;
 		scoreRecorder = Singleton<ScoreRecorder>.Instance;
 		actionManager = Singleton<RoundActionManager>.Instance;
+		physisManager = Singleton<PhysisManager>.Instance;
 
 		leaveSeconds = 33;
 		leaveSecond2 = 30;
@@ -114,7 +116,10 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
 			GameObject ufo = ufoFactory.GetUFO(round);
 			Debug.Log(ufo);
 			ufos.Add(ufo);
-			actionManager.addRandomAction(ufo);
+			if(actionManager.If_Active == 1)
+			    actionManager.addRandomAction (ufo);
+			else
+			    physisManager.addRandomAction (ufo);
 		}
 	}
 
